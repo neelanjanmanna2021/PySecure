@@ -1,0 +1,33 @@
+a.pyc (Python 3.11)
+[Code]
+    File Name: a.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 3
+    Flags: 0x00000000
+    [Names]
+        'print'
+        'input'
+        'c'
+    [Locals+Names]
+    [Constants]
+        'hello world'
+        None
+    [Disassembly]
+        0       RESUME                        0
+        2       PUSH_NULL                     
+        4       LOAD_NAME                     0: print
+        6       LOAD_CONST                    0: 'hello world'
+        8       PRECALL                       1
+        12      CALL                          1
+        22      POP_TOP                       
+        24      PUSH_NULL                     
+        26      LOAD_NAME                     1: input
+        28      PRECALL                       0
+        32      CALL                          0
+        42      STORE_NAME                    2: c
+        44      LOAD_CONST                    1: None
+        46      RETURN_VALUE                  

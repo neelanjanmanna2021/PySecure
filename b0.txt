@@ -1,0 +1,39 @@
+# Source Generated with Decompyle++
+# File: b.pyc (Python 3.11)
+
+from Crypto import Random
+from Crypto.Cipher import AES
+import hashlib
+
+class Decryptor:
+    
+    def __init__(self, key, file_name):
+        self.key = hashlib.sha256(key.encode('utf-8')).digest()
+        self.file_name = file_name
+
+    
+    def pad(self, s):
+        return s + b'\x00' * (AES.block_size - len(s) % AES.block_size)
+
+    
+    def decrypt(self, ciphertext, key):
+        iv = ciphertext[:AES.block_size]
+        cipher = AES.new(key, AES.MODE_CBC, iv)
+        plaintext = cipher.decrypt(ciphertext[AES.block_size:])
+        return plaintext.rstrip(b'\x00')
+
+    
+    def decrypt_file(self):
+        dec = self.decrypt(self.file_name, self.key)
+        return dec
+
+
+
+class BruteForce:
+    
+    def __init__(self, encrypted_codes):
+        self.encrypted_codes = encrypted_codes
+        self.password = 0
+
+    
+    def start(self):

@@ -1,0 +1,5 @@
+# Source Generated with Decompyle++
+# File: a.pyc (Python 3.11)
+
+print('hello world')
+c = input()
